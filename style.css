@@ -290,7 +290,7 @@ h1 {
     .hero {
         align-items: center;
         background: linear-gradient(to right, rgba(10, 13, 22, 0.94) 26%, rgba(10, 13, 22, 0.14) 76%), 
-                    url('images/hero.jpg');
+                    url();
         background-position: center;
         background-size: cover;
     }
@@ -471,4 +471,5 @@ section[id] {
     .tier-card.featured {
         padding: 61px 34px; /* Makes the featured card taller */
     }
+
 }
