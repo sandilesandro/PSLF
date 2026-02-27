@@ -1,475 +1,129 @@
-/* LEGACY OF PATRICK SHAI - CINEMATIC DESIGN SYSTEM
-   Theme: Midnight & Gold (High Contrast NGO)
-   Logic: Mobile-First with Desktop Overrides
-*/
-
 :root {
-    /* Color Palette */
-    --bg-dark: #0a0d16;
-    --bg-card: #131722;
-    --accent-gold: #d4af37;
-    --accent-gold-hover: #f1c40f;
-    --text-white: #f3f3f3;
-    --text-muted: #a2a2a2;
-    
-    /* Transitions */
-    --trans-smooth: 0.32s cubic-bezier(0.77, 0, 0.18, 1);
+    --gold: #d4af37;
+    --dark: #0a0d16;
+    --card: #131722;
+    --white: #f3f3f3;
+    --muted: #a2a2a2;
+    --trans: 0.42s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
-/* --- 1. Global Reset & Base Styles --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- Global --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.62; overflow-x: hidden; }
+.container { width: 91%; max-width: 1202px; margin: 0 auto; }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-white);
-    line-height: 1.62;
-    overflow-x: hidden;
-}
-
-.container {
-    width: 91%;
-    max-width: 1202px;
-    margin: 0 auto;
-}
-
-/* --- 2. Navigation & Hamburger Logic --- */
-.main-nav {
-    height: 84px;
-    background: var(--bg-dark);
-    opacity: 98%;
-    position: sticky;
-    top: 0;
-    z-index: 1003;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.13);
-}
-
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-.logo {
-    font-weight: 900;
-    font-size: 23px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.logo span {
-    color: var(--accent-gold);
-    margin-left: 3px;
-}
-
-/* Hamburger Icon */
-.hamburger {
-    display: block;
-    cursor: pointer;
-    z-index: 1006;
-}
-
-.hamburger span {
-    display: block;
-    width: 27px;
-    height: 3px;
-    background: var(--text-white);
-    margin: 6px 0;
-    transition: var(--trans-smooth);
-}
-
-/* Centered Mobile Menu Overlay */
-.nav-menu {
-    position: fixed;
-    top: 84px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 84px);
-    background: var(--bg-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.42s cubic-bezier(0.77, 0, 0.18, 1);
-    list-style: none;
-    gap: 37px;
-    z-index: 1005;
-}
-
-.nav-menu.active {
-    left: 0;
-}
-
-.nav-menu a {
-    color: var(--text-white);
-    text-decoration: none;
-    font-size: 23px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Button visibility logic */
-.hide-mobile { display: none; }
-.mobile-only { width: 83%; margin-top: 23px; }
-
-.nav-cta {
-    border: 2px solid var(--accent-gold);
-    color: var(--accent-gold);
-    padding: 11px 23px;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 13px;
-    text-align: center;
-    transition: var(--trans-smooth);
-}
-
-.nav-cta:hover {
-    background: var(--accent-gold);
-    color: var(--bg-dark);
-}
-
-/* --- 3. Hero Section (Responsive Image) --- */
-.hero {
-    min-height: 89vh;
-    /* Center-focused vertical gradient for mobile readability */
-    background: linear-gradient(to bottom, 
-                rgba(10, 13, 22, 0.82) 16%, 
-                rgba(10, 13, 22, 0.12) 48%, 
-                rgba(10, 13, 22, 0.93) 87%), 
-                url('images/hero.jpg'); 
-    background-size: cover;
-    background-position: center 21%;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 63px;
-}
-
-.eyebrow {
-    color: var(--accent-gold);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    font-size: 13px;
-    display: block;
-    margin-bottom: 17px;
-}
-
-h1 {
-    font-size: 36px;
-    line-height: 1.09;
-    font-weight: 900;
-    text-shadow: 2px 2px 11px #000;
-}
-
-.hero-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
-    margin-top: 31px;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 16px 34px;
-    font-weight: 900;
-    text-decoration: none;
-    text-align: center;
-    font-size: 14px;
-    transition: transform 0.22s;
-}
-
-.btn-primary { background: var(--accent-gold); color: #000; }
-.btn-secondary { border: 2px solid #fff; color: #fff; }
-
-/* --- 4. Story & Milestone Layout --- */
-.story-container {
-    padding: 83px 0;
-    background-color: var(--bg-card);
-}
-
-.section-heading {
-    color: var(--accent-gold);
-    font-size: 31px;
-    margin-bottom: 47px;
-    text-transform: uppercase;
-}
-
-.milestone {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-    margin-bottom: 67px;
-    padding-bottom: 41px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.milestone-date {
-    color: var(--accent-gold);
-    font-weight: 900;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-.milestone-content h2 {
-    font-size: 28px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-}
-
-.milestone-content p {
-    color: var(--text-muted);
-    font-size: 17px;
-}
-
-/* Stat Grid Inside Milestones */
-.stat-grid {
-    display: flex;
-    gap: 39px;
-    margin-top: 31px;
-}
-
-.stat-num {
-    display: block;
-    font-size: 33px;
-    font-weight: 900;
-    color: var(--accent-gold);
-}
-
-.stat-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-}
-
-/* --- 5. Final Tribute/Footer --- */
-.final-tribute {
-    background: var(--bg-card);
-    padding: 91px 0;
-    text-align: center;
-}
-
-.tribute-box p {
-    font-size: 24px;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--accent-gold);
-    max-width: 697px;
-    margin: 0 auto 19px;
-    line-height: 1.41;
-}
-
-/* --- 6. Desktop Overrides (1023px) --- */
-@media (min-width: 1023px) {
-    .hamburger { display: none; }
-    
-    .nav-menu {
-        position: static;
-        height: auto;
-        width: auto;
-        flex-direction: row;
-        padding-top: 0;
-        display: flex;
-        gap: 32px;
-    }
-
-    .nav-menu a { font-size: 13px; letter-spacing: 1px; }
-    
-    .hide-mobile { display: block; }
-    .mobile-only { display: none; }
-
-    .hero {
-        align-items: center;
-        background: linear-gradient(to right, rgba(10, 13, 22, 0.94) 26%, rgba(10, 13, 22, 0.14) 76%), 
-                    url();
-        background-position: center;
-        background-size: cover;
-    }
-
-    h1 { font-size: 61px; }
-    .hero-actions { flex-direction: row; }
-    
-    .milestone {
-        flex-direction: row;
-        gap: 89px;
-    }
-    
-    .milestone-date { min-width: 153px; }
-}
-
-/* --- 7. Hamburger Animation Styles --- */
+/* --- Navigation --- */
+.main-nav { height: 84px; background: var(--dark); position: sticky; top: 0; z-index: 1003; border-bottom: 1px solid rgba(212, 175, 55, 0.12); }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo { font-weight: 900; font-size: 23px; text-transform: uppercase; }
+.logo span { color: var(--gold); }
+.nav-controls { display: flex; align-items: center; gap: 19px; }
+.hamburger { cursor: pointer; z-index: 1006; }
+.hamburger span { display: block; width: 26px; height: 3px; background: var(--white); margin: 6px 0; transition: 0.31s; }
 .hamburger.open span:nth-child(1) { transform: rotate(44deg) translate(6px, 7px); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-44deg) translate(6px, -7px); }
 
+/* --- Mobile Menu --- */
+.nav-menu { position: fixed; top: 84px; left: -100%; width: 100%; height: calc(100vh - 84px); background: var(--dark); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 37px; transition: var(--trans); list-style: none; }
+.nav-menu.active { left: 0; }
+.nav-link { color: var(--white); text-decoration: none; font-size: 23px; font-weight: 900; text-transform: uppercase; position: relative; padding: 6px 0; }
+.nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 51%; background: var(--gold); transition: 0.37s; transform: translateX(-50%); }
+.nav-link:hover::after { width: 91%; }
 
-
-/* --- Updated Footer Socials --- */
-
-/* --- 8. Final Footer Fix --- */
-.site-footer {
-    padding: 63px 0 43px;
-    background-color: var(--bg-dark);
-    border-top: 1px solid rgba(212, 175, 55, 0.12);
-    width: 100%;
-    clear: both;
-}
-
-.footer-stack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 31px;
-    margin-bottom: 29px;
-}
-
-.footer-socials a {
-    color: var(--accent-gold);
-    transition: var(--trans-smooth);
-    display: inline-block;
-}
-
-.footer-socials a:hover {
-    color: var(--text-white);
-    transform: translateY(-4px);
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.39));
-}
-
-.footer-credit {
-    padding-top: 23px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    width: 100%;
-    max-width: 323px; /* Limits the border width for a cleaner look */
-}
-
-.footer-credit p {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+/* --- Button Mechanics (Shimmer & Rectangular) --- */
+.btn-shine-gold, .btn-primary, .btn-secondary {
     font-weight: 900;
-}
-
-.footer-credit a {
-    color: var(--accent-gold);
     text-decoration: none;
-    margin-left: 4px;
-    transition: var(--trans-smooth);
-}
-
-.footer-credit a:hover {
-    color: var(--text-white);
-}
-
-/* --- Support Section Styles --- */
-.support-section {
-    padding: 93px 0;
-    background: linear-gradient(to bottom, var(--bg-dark), #0d111d);
-}
-
-.section-intro {
-    max-width: 601px;
-    color: var(--text-muted);
-    margin-bottom: 53px;
-    font-size: 17px;
-}
-
-.tier-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 31px;
-}
-
-.tier-card {
-    background: var(--bg-card);
-    padding: 43px 33px;
-    text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.08);
-    transition: var(--trans-smooth);
-}
-
-.tier-card.featured {
-    border: 2px solid var(--accent-gold);
-    box-shadow: 0 11px 37px rgba(0, 0, 0, 0.43);
-}
-
-.tier-amount {
-    display: block;
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--accent-gold);
-    margin-bottom: 11px;
-}
-
-.tier-card h3 {
     text-transform: uppercase;
-    font-size: 19px;
-    margin-bottom: 17px;
-}
-
-.tier-card p {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 31px;
-}
-
-/* --- Back to Top Button --- */
-#backToTop {
-    display: none;
-    position: fixed;
-    bottom: 31px;
-    right: 31px;
-    z-index: 1009;
-    background-color: var(--accent-gold);
-    color: var(--bg-dark);
-    border: none;
-    width: 47px;
-    height: 47px;
-    font-size: 21px;
-    font-weight: 900;
-    cursor: pointer;
+    display: inline-block;
     transition: 0.31s;
+    border-radius: 0; /* Rectangular choice */
+    border: none;
 }
 
-#backToTop:hover {
-    background-color: var(--text-white);
-    transform: translateY(-4px);
+.btn-shine-gold {
+    background: var(--gold);
+    color: var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+.btn-shine-gold::before { content: ''; position: absolute; top: 0; left: -101%; width: 53%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.42), transparent); transition: 0.63s; }
+.btn-shine-gold:hover::before { left: 101%; }
+
+.nav-cta-mobile { padding: 9px 17px; font-size: 11px; }
+.mobile-menu-donate { width: 83%; max-width: 297px; padding: 19px 0; text-align: center; }
+
+/* --- Hero Section Fix (Non-Long Buttons) --- */
+.hero { 
+    min-height: 89vh; 
+    background: linear-gradient(to bottom, rgba(10,13,22,0.82) 11%, rgba(10,13,22,0.91) 94%), 
+                url('images/hero.jpg') center/cover no-repeat; 
+    display: flex; align-items: flex-end; padding-bottom: 67px; 
+}
+h1 { font-size: 37px; line-height: 1.11; font-weight: 900; }
+.hero-text p { max-width: 497px; margin: 23px 0 37px; color: var(--muted); }
+
+.hero-actions { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 17px; 
+    align-items: flex-start; /* Corrects stretching issue */
 }
 
-/* --- Smooth Scrolling & Anchor Offset --- */
-html {
-    scroll-behavior: smooth;
-}
+/* --- Content Blocks --- */
+.history-section { padding: 83px 0; }
+.section-heading { color: var(--gold); font-size: 31px; margin-bottom: 47px; text-transform: uppercase; }
+.milestone { border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 41px; margin-bottom: 53px; }
+.m-date { color: var(--gold); font-weight: 900; display: block; margin-bottom: 13px; }
 
-/* Prevents the sticky nav from covering section headings when jumping */
-section[id] {
-    scroll-margin-top: 84px;
-}
+.support-section { padding: 91px 0; background: #0d111d; }
+.tier-grid { display: grid; gap: 31px; }
+.tier-card { background: var(--card); padding: 43px; text-align: center; border: 1px solid rgba(212,175,55,0.08); }
+.tier-card.featured { border: 2px solid var(--gold); transform: scale(1.02); }
+.tier-amount { display: block; font-size: 33px; font-weight: 900; color: var(--gold); margin-bottom: 11px; }
 
-/* --- Desktop Overrides --- */
+/* --- Shared Button Styles --- */
+.btn-primary { background: var(--gold); color: #000; padding: 16px 33px; font-size: 13px; }
+.btn-secondary { border: 2px solid #fff; color: #fff; padding: 16px 33px; font-size: 13px; }
+
+/* --- Footer & Centered Branding --- */
+.site-footer { padding: 63px 0 43px; border-top: 1px solid rgba(212,175,55,0.12); text-align: center; }
+.footer-socials { display: flex; justify-content: center; gap: 23px; margin-bottom: 31px; }
+.social-icon { 
+    width: 43px; height: 43px; display: flex; align-items: center; justify-content: center; 
+    border: 1px solid rgba(212, 175, 55, 0.31); color: var(--gold); text-decoration: none; 
+    font-size: 11px; font-weight: 900; transition: 0.42s; 
+}
+.social-icon:hover { background: var(--gold); color: var(--dark); transform: translateY(-4px); }
+
+.footer-credit { 
+    margin: 31px auto 0; padding-top: 21px; border-top: 1px solid rgba(255, 255, 255, 0.07); 
+    max-width: 337px; width: 100%; 
+}
+.footer-credit p { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 2px; justify-content: center; display: flex; gap: 7px; align-items: center; }
+.branding-link { color: var(--gold); text-decoration: none; font-weight: 900; position: relative; transition: 0.31s; }
+.branding-link:hover { color: var(--white); }
+
+/* --- Back to Top --- */
+#backToTop { position: fixed; bottom: 31px; right: 31px; background: var(--gold); color: var(--dark); border: none; width: 53px; height: 53px; font-size: 11px; font-weight: 900; cursor: pointer; display: none; z-index: 1007; border-radius: 0; transition: 0.32s; }
+#backToTop:hover { background: var(--white); transform: translateY(-3px); }
+
+.heart { color: #e74c3c; animation: beat 2.11s infinite; display: inline-block; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 51% { transform: scale(1.17); } }
+
+/* --- Desktop Logic --- */
 @media (min-width: 1023px) {
-    .tier-grid {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
+    .nav-cta-mobile, .hamburger, .mobile-only-item { display: none; }
+    .nav-menu { position: static; height: auto; width: auto; flex-direction: row; gap: 47px; background: transparent; }
+    .nav-link { font-size: 13px; letter-spacing: 1px; }
+    .hero { 
+        align-items: center; 
+        background: linear-gradient(to right, rgba(10,13,22,0.96) 24%, rgba(10,13,22,0.11) 74%), 
+                    url('images/hero.jpg') center/cover; 
     }
-
-    .tier-card.featured {
-        padding: 61px 34px; /* Makes the featured card taller */
-    }
-
+    h1 { font-size: 61px; }
+    .hero-actions { flex-direction: row; }
+    .tier-grid { grid-template-columns: repeat(3, 1fr); }
 }
