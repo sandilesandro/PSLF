@@ -84,3 +84,36 @@ h1 { font-size: 43px; margin: 17px 0; font-weight: 900; line-height: 1.11; }
     .impact-cards-row { grid-template-columns: 1fr 1fr; grid-column: span 2; }
 }
 
+/* --- SCROLL TO TOP REBORN --- */
+.scroll-btn {
+    position: fixed;
+    bottom: 31px;
+    right: 31px;
+    width: 53px;
+    height: 53px;
+    background: #8e44ad;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Move it off screen and hide it */
+    opacity: 0;
+    transform: translateY(103px); 
+    transition: all 0.43s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 11px 23px rgba(142, 68, 173, 0.31);
+}
+
+/* Active State */
+.scroll-btn.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-btn:hover {
+    background: #1a1a1a;
+    transform: scale(1.11);
+}
