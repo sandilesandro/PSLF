@@ -3,131 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.19">
-    <title>Patrick Shai | Cinematic Legacy</title>
+    <title>Patrick Shai | Legacy Foundation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="main-nav">
-        <div class="container nav-wrapper">
-            <div class="logo">PATRICK<span>SHAI</span></div>
+    <header class="site-header">
+        <nav class="container nav-wrapper">
+            <div class="logo">
+                <a href="#home"><img src="images/logo.png" alt="Foundation Logo"></a>
+            </div>
             
-            <div class="nav-controls">
-                <a href="#legacy" class="btn-shine-gold nav-cta-mobile">DONATE</a>
-                <div class="hamburger" id="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </button>
 
-            <ul class="nav-menu" id="nav-list">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#history" class="nav-link">History</a></li>
-                <li><a href="#legacy" class="nav-link">Support</a></li>
-                <li class="mobile-only-item">
-                    <a href="#legacy" class="btn-shine-gold mobile-menu-donate">DONATE NOW</a>
-                </li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">The Chronicle</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li class="nav-cta"><a href="#legacy" class="btn-sm">DONATE</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <header class="hero" id="home">
-        <div class="container">
-            <div class="hero-text">
-                <span class="eyebrow">37 Years of Truth</span>
-                <h1>ACTOR. ACTIVIST.</h1>
-                <p>Honoring a South African icon who stood for justice on and off the screen. He traded the safety of the script for the bravery of truth, turning his life into a sanctuary for others.</p>
-                <div class="hero-actions">
-                    <a href="#history" class="btn-primary">LEARN HISTORY</a>
-                    <a href="#legacy" class="btn-secondary">THE MISSION</a>
-                </div>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <main class="history-section" id="history">
-        <div class="container">
-            <h2 class="section-heading">A CHRONICLE OF SERVICE</h2>
-            <div class="milestone">
-                <div class="m-date">1956 — 1983</div>
-                <div class="m-content">
-                    <h2>Sophiatown Roots</h2>
-                    <p>Born in Sophiatown, Patrick's artistry began with traditional dance. This discipline formed the backbone of his later performances.</p>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <span class="eyebrow">37 YEARS OF TRUTH</span>
+                    <h1>ACTOR. ACTIVIST. <br><span class="purple">ICON.</span></h1>
+                    <p>Honoring a South African legend whose career spanned the theatre, international film, and a dedicated fight for social healing.</p>
+                    <div class="hero-btns">
+                        <a href="#history" class="btn-main">OUR STORY</a>
+                        <a href="#impact" class="btn-ghost">HIS IMPACT</a>
+                    </div>
                 </div>
             </div>
-            <div class="milestone">
-                <div class="m-date">1984 — 2010</div>
-                <div class="m-content">
-                    <h2>The Voice of a Nation</h2>
-                    <p>A household name through <em>Soul City</em> and <em>Generations</em>, Shai mirrored South Africa's internal struggles.</p>
-                </div>
-            </div>
-            <div class="milestone">
-                <div class="m-date">2011 — 2022</div>
-                <div class="m-content">
-                    <h2>The Activist's Heart</h2>
-                    <p>In his final years, he shifted focus to <strong>Khuluma Ndoda</strong>, fostering vulnerability among men to end GBV.</p>
-                </div>
-            </div>
-        </div>
-    </main>
+        </section>
 
-    <section class="support-section" id="legacy">
-        <div class="container">
-            <h2 class="section-heading">CARRY THE TORCH</h2>
-            <div class="tier-grid">
-                <div class="tier-card">
-                    <span class="tier-amount">R153</span>
-                    <h3>Awareness</h3>
-                    <p>Supports workshop materials and community outreach.</p>
-                    <a href="#" class="btn-primary">SELECT</a>
+        <section class="history-grid" id="history">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="sub">THE CHRONICLE</span>
+                    <h2>A Life Lived in <span class="purple">Full Color</span></h2>
                 </div>
-                <div class="tier-card featured">
-                    <span class="tier-amount">R501</span>
-                    <h3>Advocacy</h3>
-                    <p>Funds counseling for men seeking to break cycles of violence.</p>
-                    <a href="#" class="btn-primary">SELECT</a>
-                </div>
-                <div class="tier-card">
-                    <span class="tier-amount">R1203</span>
-                    <h3>Legacy</h3>
-                    <p>Directly supports provincial seminars and national advocacy.</p>
-                    <a href="#" class="btn-primary">SELECT</a>
+
+                <div class="bento-layout">
+                    <article class="bento-box feature">
+                        <span class="era">1956 — 1983</span>
+                        <h3>Sophiatown Awakening</h3>
+                        <p>Born in Sophiatown, Patrick's artistry was forged in the fire of '76, using dance as a revolutionary response to brutality.</p>
+                    </article>
+                    <article class="bento-box">
+                        <span class="era">1984 — 1993</span>
+                        <h3>Stage & Screen</h3>
+                        <p>His portrayal of "Jakes" in the play Sophiatown toured Europe, cementing his status as a leading dramatic force.</p>
+                    </article>
+                    <article class="bento-box">
+                        <span class="era">1994 — 2005</span>
+                        <h3>Global Presence</h3>
+                        <p>Shai appeared in Cry, the Beloved Country while lead roles in Soul City made him a national conscience.</p>
+                    </article>
+                    <article class="bento-box feature">
+                        <span class="era">2006 — 2018</span>
+                        <h3>Champion of Resilience</h3>
+                        <p>As an ambassador, Patrick shifted the needle on social issues, famously continuing his advocacy even after Dobsonville.</p>
+                    </article>
+                    <article class="bento-box feature">
+                        <span class="era">2011 — 2021</span>
+                        <h3>Khuluma Ndoda</h3>
+                        <p>He founded this movement to break the silence on GBV, advocating for masculinity rooted in vulnerability.</p>
+                    </article>
+                    <article class="bento-box split-tile">
+                        <span class="era">2022 — BEYOND</span>
+                        <h3>The Final Performance</h3>
+                        <p>The Foundation ensures his voice for the voiceless is never silenced. His legacy is now our mission.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="impact-section" id="impact">
+            <div class="container">
+                <div class="impact-grid">
+                    <div class="impact-text">
+                        <span class="sub">BEYOND THE STAGE</span>
+                        <h2>The <span class="purple">Institutional</span> Influence</h2>
+                        <p>Patrick Shai challenged the systems that governed society. His work reached the core of South African social policy.</p>
+                        
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <span class="m-num">11</span>
+                                <span class="m-label">Major Film Awards</span>
+                            </div>
+                            <div class="metric">
+                                <span class="m-num">01</span>
+                                <span class="m-label">National Foundation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-dual-images">
+                        <div class="legacy-img-box">
+                            <img src="images/WhatsApp Image 2026-02-27 at 16.39.12.jpeg" alt="Strategic Partner">
+                        </div>
+                        <div class="legacy-img-box">
+                            <img src="images/WhatsApp Image 2026-02-27 at 16.39.1.jpeg" alt="Institutional Impact">
+                        </div>
+                    </div>
+
+                    <div class="impact-cards-row">
+                        <div class="i-card">
+                            <h4>Policy Advocacy</h4>
+                            <p>Collaborated with the Department of Justice to champion anti-femicide initiatives nationwide.</p>
+                        </div>
+                        <div class="i-card">
+                            <h4>Cultural Pioneer</h4>
+                            <p>Founding member of Free Film Makers, ensuring local stories were told by local voices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-socials">
-                <a href="#" class="social-icon">FB</a>
-                <a href="#" class="social-icon">IG</a>
-                <a href="#" class="social-icon">TW</a>
-            </div>
-            <div class="footer-credit">
-                <p>Created with <span class="heart">❤️</span> by <a href="https://thubanimedia.co.za" target="_blank" class="branding-link">Thubani Media</a></p>
-            </div>
+            <p class="brand-credit">CREATED BY <a href="https://thubanimedia.co.za" target="_blank" class="t-link">THUBANI MEDIA</a></p>
         </div>
     </footer>
 
-    <button id="backToTop" title="Go to top">TOP</button>
-
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navList = document.getElementById('nav-list');
-        const backBtn = document.getElementById("backToTop");
+        const toggleBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-links');
 
-        menuToggle.onclick = () => {
-            navList.classList.toggle('active');
-            menuToggle.classList.toggle('open');
-        };
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('is-open');
+            toggleBtn.classList.toggle('is-active');
+        });
 
-        window.onscroll = () => {
-            backBtn.style.display = (window.scrollY > 403) ? "block" : "none";
-        };
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('is-open');
+                toggleBtn.classList.remove('is-active');
+            });
+        });
 
-        backBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+        
     </script>
+
+    <button id="scrollToTop" class="scroll-btn" aria-label="Scroll to Top">
+    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
 </body>
 </html>
