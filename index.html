@@ -153,14 +153,35 @@
                 toggleBtn.classList.remove('is-active');
             });
         });
+        
+document.addEventListener('DOMContentLoaded', () => {
+    const topBtn = document.getElementById('scrollToTop');
 
+    window.onscroll = () => {
+        // Trigger after 301px of scrolling
+        if (window.scrollY > 301) {
+            topBtn.classList.add('active');
+        } else {
+            topBtn.classList.remove('active');
+        }
+    };
+
+    topBtn.onclick = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+});
         
     </script>
 
-    <button id="scrollToTop" class="scroll-btn" aria-label="Scroll to Top">
-    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<button id="scrollToTop" class="scroll-btn">
+    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
         <path d="M18 15l-6-6-6 6"/>
     </svg>
 </button>
+
+
 </body>
 </html>
